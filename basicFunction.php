@@ -120,6 +120,28 @@ function _strstr($_str){
     }
 }
 
+//判断是否为校外
+function _isMalposition($_signFormDetailedInfor){
+    $_itude = $_POST['itude'];
+    $_longitude1 = $_itude['longitude'];
+    $_latitude1 = 90 - $_itude['latitude'];
+    $_count = count($_signFormDetailedInfor['datas']['signPlaceSelected']);
+    for($i=0;$i<=$_count;$i++){
+        if($i == $_count){
+            return 1;
+            break;
+        }
+        $_longitude2 = $_signFormDetailedInfor['datas']['signPlaceSelected'][$i]['longitude'];
+        $_latitude2 = 90 - $_signFormDetailedInfor['datas']['signPlaceSelected'][$i]['latitude'];
+        $_c = sin($_latitude1)*sin($_latitude2)*cos($_longitude1 - $_longitude2) + cos($_latitude1)*cos($_latitude2);
+        $_distance = 6371004 * acos($_c) * M_PI / 180;
+        if($_distance <= $_signFormDetailedInfor['datas']['signPlaceSelected'][$i]['radius']){
+            return 0;
+            break;
+        }
+    }
+}
+
 //生成体温
 function _randTemp(){
     $_middleTemp = $_POST['config']['fillForm']['temperature'] * 10;
