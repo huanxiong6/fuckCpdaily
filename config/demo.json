@@ -1,0 +1,23 @@
+{
+    "system":{
+        "userId":"",//学号
+        "password":"",//密码
+        "delay":""//延迟时间，不需要就别填
+    },
+    "location":{
+        "longitude":"",//经度，精确到小数点后六位
+        "latitude":"",//纬度，精确到小数点后六位
+        "itudeOffset":"",//经纬度随机量，填数字0-20均可，不填就不随机
+        "position":""//定位地址，例如中国山西省太原市万柏林区千峰街道清泽东路
+    },
+    "fillForm":{
+        "optionKeyword":"",//选项关键词（多个关键词用英文逗号隔开），有关键词直接就选了，勿填多个选项均包含的关键词
+        "tempKeyword":"",//体温填空的关键词
+        "temperature":"",//体温中值，随机是以此温度为中心±随机量为范围随机（）建议36.5
+        "tempOffset":""//体温随机量，不填不随机（建议0.4）
+    },
+    "push":{
+        "email":"",//推送邮箱，请将DonaldTrump@email.cn列入白名单，不填就不推送邮箱
+        "token":""//pushplus推送token，不填不推送
+    }
+}

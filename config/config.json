@@ -1,0 +1,23 @@
+{
+    "system":{
+        "userId":"",
+        "passWord":"",
+        "delay":""
+    },
+    "location":{
+        "longitude":"",
+        "latitude":"",
+        "itudeOffset":"",
+        "position":""
+    },
+    "fillForm":{
+        "optionKeyword":"",
+        "tempKeyword":"",
+        "temperature":"",
+        "tempOffset":""
+    },
+    "push":{
+        "email":"",
+        "token":""
+    }
+}
