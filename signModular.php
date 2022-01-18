@@ -134,23 +134,3 @@ function _sign(){
         }
     return $_print;
 }
-
-function _newSign(){
-    $_cookie = $_POST['cookie'];
-    $_userId = $_POST['config']['system']['userId'];
-    $_itude = $_POST['itude'];
-    $_deviceId = $_POST['deviceId'];
-    if (_isHaveSign()){
-        $_getSignInstanceWidBody = '{}';
-        $_resultJson = _postSubmit('https://tyut.campusphere.net/wec-counselor-sign-apps/stu/sign/getStuSignInfosInOneDay','{}',$_cookie);
-        $_result = json_decode($_resultJson,true);
-        $_signInstanceWid = $_result['datas']['signedTasks'][0]['signInstanceWid'];
-        $_signWid = $_result['datas']['signedTasks'][0]['signWid'];
-        $_getSignFormDetailedInforBody = json_encode(array('signInstanceWid'=>$_signInstanceWid,'signWid'=>$_signWid));
-        $_resultJson = _postSubmit('https://tyut.campusphere.net/wec-counselor-sign-apps/stu/sign/detailSignInstance',$_getSignFormDetailedInforBody,$_cookie);
-        $_signFormDetailedInfor = json_encode($_resultJson,true);
-        
-    }else{
-        $_print = '无未签到表单';
-    }
-}
