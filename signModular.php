@@ -86,7 +86,7 @@ function _fillSignForm($_signWidArray,$_signFormDetailedInforJson){
     $_filledForm['signInstanceWid'] = $_signWidArray['signInstanceWid'];
     $_filledForm['longitude'] = $_itude['longitude'];
     $_filledForm['latitude'] = $_itude['latitude'];
-    $_filledForm['isMalposition'] = 1;
+    $_filledForm['isMalposition'] = _isMalposition($_signFormDetailedInfor);
     $_filledForm['abnormalReason'] = '';
     $_filledForm['position'] = $_POST['config']['location']['position'];
     $_filledForm['uaIsCpadaily'] = true;
